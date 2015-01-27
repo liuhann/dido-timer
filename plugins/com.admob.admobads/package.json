@@ -1,0 +1,37 @@
+{
+    "version": "2.0.5",
+    "name": "com.admob.admobads",
+    "cordova_name": "AdMob Google Ads + Tappx",
+    "description": "Phonegap, Cordova, Ionic/Angular, Intel XDK AdMob plugin. Monetize your app with one javascript line. Android SDK v6.1, iOS SDK v6.12.2. Tappx support.",
+    "license": "MIT",
+    "repo": "https://github.com/appfeel/admob-google-cordova.git",
+    "issue": "https://github.com/appfeel/admob-google-cordova/issues",
+    "keywords": [
+        "ad",
+        "ads",
+        "admob",
+        "google",
+        "advertising",
+        "advertisment",
+        "publicity",
+        "earn",
+        "win",
+        "play",
+        "services",
+        "iad",
+        "flurry",
+        "monetization",
+        "money",
+        "appfeel"
+    ],
+    "platforms": [
+        "android",
+        "ios"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=2.9"
+        }
+    ]
+}

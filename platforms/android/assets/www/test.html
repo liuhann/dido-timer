@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+
+function isEmail(str) {
+	var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/; 
+	return reg.test(str); 
+}
+
+function isMobile(str) {
+	var patrn = /^(13|14|15|18|17)\d{9}$/;
+	if (!patrn.exec(str)) return false; 
+	return true ;
+}
+
+alert(isMobile("18801035263"));
+alert(isMobile("19801035263"));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
