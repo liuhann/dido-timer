@@ -289,8 +289,8 @@ function renderTimeLine(d) {
 }
 
 function tick() {
+	var now = new Date().getTime();
 	if (running) {
-		var now = new Date().getTime();
 		var dura = formatDura(now - running.start);
 		$(".running .tick").html(dura);
 		if (!$(".bottom .item.time").hasClass("sibon")) {
@@ -298,7 +298,16 @@ function tick() {
 			$(".bottom .item.time").html(dura);
 		}
 	}
+	
+	var h = $(".timeline .line").height();
+	
+	var d = new Date();
+	d.setHours(0, 0, 0, 1);
+	
+	$(".timeline .elapse").css("height", h * (now-d.getTime())/ONE_DAY_MILL);
+	
 	setTimeout("tick()", 1000);
+	
 }
 
 function explainObject(t) {

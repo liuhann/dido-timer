@@ -1,4 +1,3 @@
-
 function drawCal(y,m,weekFirst, container) {
 	
 	$(container + " div.row").remove();
@@ -10,7 +9,11 @@ function drawCal(y,m,weekFirst, container) {
 	var weeks = 1;
 	
 	var dateHeight = Math.floor(parseInt($(container).height())/6);
-	var dateWidth = Math.floor(parseInt($(container).width())/7);
+	var dateWidth = Math.floor(parseInt($(container).width())/7)-3 - 8;
+	
+	if (dateHeight>50) {
+		dateHeight=50;
+	}
 	
 	var currentWeek = weekFirst; 
 	while (true) {
@@ -26,13 +29,14 @@ function drawCal(y,m,weekFirst, container) {
 			newLine.css("top", (dateHeight+1)*(weeks-1));
 		}
 		
-		var newDateDiv = $("<div class='date'></div>");
+		var newDateDiv = $("<div class='date grey'>-</div>");
 		newDateDiv.css("width", dateWidth);
+		newDateDiv.css("height", dateHeight-3-8);
 		if (ccIndex>0 || cc[ccIndex].week==currentWeek) {
 			if (weekFirst==currentWeek) {
 				newDateDiv.addClass("first");
 			}
-			
+			newDateDiv.removeClass("grey");
 			newDateDiv.attr("id", "date" + (ccIndex+1));
 			newDateDiv.html(ccIndex+1);
 			newDateDiv.data("cc", cc[ccIndex]);
@@ -75,6 +79,8 @@ function drawCal(y,m,weekFirst, container) {
 			break;
 		}
 	}
+	
+	
 }
 
 
@@ -451,4 +457,3 @@ function drawCld(SY,SM) {
 	}
 	}
 }
-
